@@ -123,6 +123,13 @@ def build_panel_embed() -> discord.Embed:
             "> 📌 После подачи заявки следите за сообщениями в тикете, чтобы не пропустить нужную информацию.\n"
 
             "> После попадания на обзвоны вы автоматически соглашаетесь пройти проверку компьютера на сторонний софт и нарушения Правил Проекта."
+
+            "**Дополнительные правила:**\n\n"
+            
+            "- Урон для рассмотрения заявки от 10000.\n\n"
+            "- Минимальное кол-во людей на DM - 10.\n\n"
+            "- Минимальная продолжительность DM - 10 минут.\n\n"
+            "- Обязательно нужен откат, который загружен на сервисы - youtube|rutube|google|yandex\n\n"
         ),
         color=main_color()
     )
@@ -334,7 +341,7 @@ class ApplicationModal(Modal, title="Форма заявления"):
     )
 
     previous_families = TextInput(
-        label="В каких семьях находились ранее?",
+        label="В каких семьях были/Откуда узнали о нашей?",
         placeholder="Укажите семьи, в которых были ранее",
         required=True,
         style=discord.TextStyle.paragraph,
@@ -342,8 +349,8 @@ class ApplicationModal(Modal, title="Форма заявления"):
     )
 
     source_info = TextInput(
-        label="Откуда узнали о семье?",
-        placeholder="Напишите, откуда узнали о семье",
+        label="Видео-откат DMa",
+        placeholder="Откат DMa от 10-чел/От 10 минут",
         required=True,
         style=discord.TextStyle.paragraph,
         max_length=300
@@ -425,8 +432,8 @@ class ApplicationModal(Modal, title="Форма заявления"):
         )
         embed.add_field(name="Ваше имя и фамилия", value=self.full_name.value, inline=False)
         embed.add_field(name="Ваш возраст", value=self.age.value, inline=False)
-        embed.add_field(name="В каких семьях находились ранее?", value=self.previous_families.value, inline=False)
-        embed.add_field(name="Откуда узнали о семье?", value=self.source_info.value, inline=False)
+        embed.add_field(name="В каких семьях были/Откуда узнали о нашей?", value=self.previous_families.value, inline=False)
+        embed.add_field(name="Видео-откат DMa", value=self.source_info.value, inline=False)
         embed.add_field(name="Обзвон / смена фамилии", value=self.extra_info.value, inline=False)
         embed.set_thumbnail(url=user.display_avatar.url)
         embed.set_footer(text=f"{BOT_NAME} • ID пользователя: {user.id}")
@@ -467,7 +474,7 @@ class OpenApplicationView(View):
     @discord.ui.button(
         label="Подать заявку в WATSON",
         style=discord.ButtonStyle.success,
-        emoji="🖤",
+        emoji="💚",
         custom_id="watson_open_application"
     )
     async def open_application(self, interaction: discord.Interaction, button: discord.ui.Button):
