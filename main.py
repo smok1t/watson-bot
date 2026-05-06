@@ -130,6 +130,8 @@ def build_panel_embed() -> discord.Embed:
             "- Минимальное кол-во людей на DM - 10.\n\n"
             "- Минимальная продолжительность DM - 10 минут.\n\n"
             "- Обязательно нужен откат, который загружен на сервисы - youtube|rutube|google|yandex\n\n"
+
+            "> -# bot created by @roninryuko"
         ),
         color=main_color()
     )
