@@ -19,10 +19,10 @@ RECRUITER_ROLE_ID = int(os.getenv("RECRUITER_ROLE_ID", "0"))
 FAMILY_ROLE_ID = int(os.getenv("FAMILY_ROLE_ID", "0"))
 VOICE_CHANNEL_ID = int(os.getenv("VOICE_CHANNEL_ID", "0"))
 
-FAMILY_NAME = os.getenv("FAMILY_NAME", "WATSON")
-BOT_NAME = os.getenv("BOT_NAME", "WATSON BOT")
+FAMILY_NAME = os.getenv("FAMILY_NAME", "𝐃𝐈𝐒𝐏𝐄𝐑𝐒𝐄𝐑")
+BOT_NAME = os.getenv("BOT_NAME", "𝐃𝐈𝐒𝐏𝐄𝐑𝐒𝐄𝐑 𝐁𝐎𝐓")
 PANEL_IMAGE_URL = os.getenv("PANEL_IMAGE_URL", "")
-TICKETS_CATEGORY_NAME = os.getenv("TICKETS_CATEGORY_NAME", "📨・заявки-watson")
+TICKETS_CATEGORY_NAME = os.getenv("TICKETS_CATEGORY_NAME", "𝐓𝐈𝐂𝐊𝐄𝐓𝐒")
 
 COUNTER_FILE = "ticket_counter.json"
 
@@ -114,22 +114,14 @@ def build_panel_embed() -> discord.Embed:
     embed = discord.Embed(
         title=f"Подать заявку в {FAMILY_NAME}",
         description=(
-            "Открыты заявки на вступление в семью!\n"
-            "> 📌 **Заявки в семью принимаются только на сервер REDWOOD.**\n"
-            "> **ВОЗРАСТ ДЛЯ РАССМОТРЕНИЯ ЗАЯВКИ: ОТ 14 ЛЕТ**\n\n"
-            "**Срок рассмотрения заявок:** от начала создания заявки до 2х дней.\n"
-            "Отсутствие ответа в тикете в течении 24 часов приводит к автоматическому закрытию тикета и повторной подаче в случае вашей необходимости.\n\n"
-            "**Внимательно прочитайте шаблон заявки при её подаче.**\n\n"
-            "> 📌 После подачи заявки следите за сообщениями в тикете, чтобы не пропустить нужную информацию.\n"
-
-            "> После попадания на обзвоны вы автоматически соглашаетесь пройти проверку компьютера на сторонний софт и нарушения Правил Проекта."
-
-            "**Дополнительные правила:**\n\n"
+           "Обязательно ознакомьтесь с условиями:\n\n"
             
-            "- Урон для рассмотрения заявки от 9000.\n\n"
-            "- Минимальное кол-во людей на DM - 10.\n\n"
-            "- Минимальная продолжительность DM - 10 минут.\n\n"
-            "- Обязательно нужен откат, который загружен на сервисы - youtube|rutube|google|yandex\n\n"
+            "▸ Требуется игровой персонаж 5 уровня на сервере **Redwood**\n"
+            "▸ Заявка рассматривается строго с откатом FULL DM с уроном от 10000 и от 10 людей.\n"
+            "▸ Без отката — моментальный отказ.\n\n"
+            "▸ Отсутствие ответа в тикете в течении 24 часов приводит к автоматическому закрытию тикета и повторной подаче в случае вашей необходимости.\n\n"
+            
+            "**Внимательно прочитайте шаблон заявки при её подаче.**\n\n"
 
             "> -# bot created by @roninryuko"
         ),
@@ -474,9 +466,9 @@ class OpenApplicationView(View):
         super().__init__(timeout=None)
 
     @discord.ui.button(
-        label="Подать заявку в WATSON",
+        label="Заполнить анкету в 𝐃𝐈𝐒𝐏𝐄𝐑𝐒𝐄𝐑",
         style=discord.ButtonStyle.success,
-        emoji="💚",
+        emoji="📝",
         custom_id="watson_open_application"
     )
     async def open_application(self, interaction: discord.Interaction, button: discord.ui.Button):
