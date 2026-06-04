@@ -146,7 +146,7 @@ def build_ticket_header_embed(user: discord.Member, ticket_number: int) -> disco
     embed.add_field(
         name="Дальнейшие действия",
         value=(
-            "• Ожидайте ответа рекрутера\n"
+            "• Ожидайте ответа Cur VZP\n"
             "• Не игнорируйте пинг и ЛС\n"
             "• На обзвон зовут только в Discord\n"
             "• При долгом отсутствии ответа тикет может быть закрыт"
@@ -343,7 +343,7 @@ class ApplicationModal(Modal, title="Форма заявления"):
     )
 
     source_info = TextInput(
-        label="Видео-откат DMa",
+        label="Видео-откат DMa и Архивы",
         placeholder="Откат DMa от 10-чел/От 10 минут",
         required=True,
         style=discord.TextStyle.paragraph,
